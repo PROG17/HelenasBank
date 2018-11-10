@@ -19,7 +19,7 @@ namespace HelenasBank.Controllers
         }
         public IActionResult Index()
         {
-            var customers = _repo.ImportCustomers();
+            var customers = _repo.GetCustomers();
             return View(customers);
         }
 
