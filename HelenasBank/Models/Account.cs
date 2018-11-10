@@ -9,7 +9,7 @@ namespace HelenasBank.Models
     {
         public string AccountNo { get; set; }
 
-        public string CustomerId { get; set; }
+        public int CustomerId { get; set; }
 
         public decimal Balance { get; set; }
     }
