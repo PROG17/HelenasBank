@@ -23,7 +23,7 @@ namespace HelenasBank.Repo
             }
         }
 
-        public string Deposit(string accountNo, int ammount)
+        public string Deposit(string accountNo, decimal ammount)
         {
             var isExistingAccount = IsCorrectAccountNo(accountNo);
 
@@ -131,7 +131,7 @@ namespace HelenasBank.Repo
 
         }
 
-        public string Withdrawal(string accountNo, int ammount)
+        public string Withdrawal(string accountNo, decimal ammount)
         {
             var isExistingAccount = IsCorrectAccountNo(accountNo);
 

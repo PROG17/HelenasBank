@@ -21,7 +21,7 @@ namespace HelenasBank.Controllers
         }
 
         [HttpPost]
-        public IActionResult DepositWithdrawal(string accountNo, int ammount, string btn)
+        public IActionResult DepositWithdrawal(string accountNo, decimal ammount, string btn)
         {
             string result = "";
             if (btn == "Insättning")

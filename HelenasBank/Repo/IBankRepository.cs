@@ -14,9 +14,9 @@ namespace HelenasBank.Repo
 
         bool IsCorrectAccountNo(string accountNo);
 
-        string Deposit(string accountNo, int ammount);
+        string Deposit(string accountNo, decimal ammount);
 
-        string Withdrawal(string accountNo, int ammount);
+        string Withdrawal(string accountNo, decimal ammount);
 
     }
 }

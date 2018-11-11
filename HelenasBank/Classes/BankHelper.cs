@@ -7,12 +7,12 @@ namespace HelenasBank.Classes
 {
     public class BankHelper
     {
-        public decimal PerformDeposit(decimal balance, int ammount)
+        public decimal PerformDeposit(decimal balance, decimal ammount)
         {
             return balance + ammount;
         }
 
-        public decimal PerformWithdrawal(decimal balance, int ammount)
+        public decimal PerformWithdrawal(decimal balance, decimal ammount)
         {
             if(ammount > balance)
             {
