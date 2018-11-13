@@ -11,7 +11,7 @@ namespace HelenasBank.Models
         {
             Accounts = new List<Account>();
         }
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string OrgNumber { get; set; }
 

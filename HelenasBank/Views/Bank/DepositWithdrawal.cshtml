@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "DepositWithdrawal";
+}
+
+<h2>DepositWithdrawal</h2>
+
+<div>
+
+    <form class="search-form"
+          asp-controller="Bank"
+          asp-action="DepositWithdrawal"
+          asp-route-accountNo=""
+          asp-route-ammount=""
+          asp-route-btn=""
+          data-ajax="true"
+          data-ajax-method="POST"
+          data-ajax-mode="append"
+          data-ajax-update="#UpdateMessage"
+          method="post">
+
+        <input name="accountNo" type="number" placeholder="Kontonummer">
+        <input name="ammount" type="number" placeholder="Summa">
+        <input type="submit" name="btn" value="Insättning">
+        <input type="submit" name="btn" value="uttag">
+
+    </form>
+</div>
+
+<div id="UpdateMessage"></div>
+
+
