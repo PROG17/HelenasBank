@@ -1,0 +1,37 @@
+﻿@model HelenasBank.ViewModels.TransferViewModel
+@{
+    ViewData["Title"] = "Transfer";
+}
+
+<h2>Transfer</h2>
+
+
+<form class="form-group" asp-action="Transfer" asp-controller="Transfer">
+
+    <label>From:</label><input class="form-control" asp-for="TransferingAccount.AccountNo" type="text" />
+    <label>To:</label><input class="form-control" asp-for="ReceivingAccount.AccountNo" type="text" />
+    <label>Amount:</label><input class="form-control" asp-for="Amount" type="text" />
+    <input class="btn-block" type="submit" value="Transfer" />
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+</form>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Account number</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.TransferingAccount.AccountNo</td>
+                <td>@Model.TransferingAccount.Balance</td>
+            </tr>
+            <tr>
+                <td>@Model.ReceivingAccount.AccountNo</td>
+                <td>@Model.ReceivingAccount.Balance</td>
+            </tr>
+        </tbody>
+    </table>
