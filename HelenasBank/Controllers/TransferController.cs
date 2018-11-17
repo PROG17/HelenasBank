@@ -38,12 +38,12 @@ namespace HelenasBank.Controllers
 
                 var transferingAccount = new Account();
 
-                model.ReceivingAccount.Balance = receivingAccount.Balance;
-                model.TransferingAccount.Balance = transferingAccount.Balance;
-
                 receivingAccount = _repository.GetCustomers().SelectMany(x => x.Accounts.Where(y => y.AccountNo == model.ReceivingAccount.AccountNo)).SingleOrDefault();
 
                 transferingAccount = _repository.GetCustomers().SelectMany(x => x.Accounts.Where(y => y.AccountNo == model.TransferingAccount.AccountNo)).SingleOrDefault();
+
+                model.ReceivingAccount.Balance = receivingAccount.Balance;
+                model.TransferingAccount.Balance = transferingAccount.Balance;
 
                 if (transferingAccount == null || receivingAccount == null)
                 {
