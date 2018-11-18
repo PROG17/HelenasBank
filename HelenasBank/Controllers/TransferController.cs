@@ -42,16 +42,16 @@ namespace HelenasBank.Controllers
 
                 transferingAccount = _repository.GetCustomers().SelectMany(x => x.Accounts.Where(y => y.AccountNo == model.TransferingAccount.AccountNo)).SingleOrDefault();
 
-                model.ReceivingAccount.Balance = receivingAccount.Balance;
-                model.TransferingAccount.Balance = transferingAccount.Balance;
-
                 if (transferingAccount == null || receivingAccount == null)
                 {
                     ModelState.AddModelError("", "Account number doesn't exist.");
+                    model.ReceivingAccount = new Account();
+                    model.TransferingAccount = new Account();
                     return View(model);
                 }
 
-
+                model.ReceivingAccount.Balance = receivingAccount.Balance;
+                model.TransferingAccount.Balance = transferingAccount.Balance;
 
                 var result = model.TransferingAccount.TransferFromAccount(model.ReceivingAccount, model.Amount);
                 if (result)
