@@ -12,5 +12,22 @@ namespace HelenasBank.Models
         public int CustomerId { get; set; }
 
         public decimal Balance { get; set; }
+
+        public bool TransferFromAccount(Account receivingAccount, decimal amount)
+        {
+            if (this.Balance < amount)
+            {
+                return false;
+            }
+            else
+            {
+
+                this.Balance -= amount;
+                receivingAccount.Balance += amount;
+                return true;
+            }
+
+
+        }
     }
 }
